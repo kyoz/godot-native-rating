@@ -1,0 +1,11 @@
+[config]
+
+name="Rating"
+binary_type="local"
+binary="rating-release.aar"
+
+[dependencies]
+
+local=[]
+remote=[]
+custom_maven_repos=[]

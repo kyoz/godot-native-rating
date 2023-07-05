@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import org.godotengine.godot.Godot;
 import org.godotengine.godot.plugin.GodotPlugin;
 import org.godotengine.godot.plugin.SignalInfo;
+import org.godotengine.godot.plugin.UsedByGodot;
 
 import java.util.Arrays;
 import java.util.List;
@@ -26,11 +27,6 @@ public class Rating extends GodotPlugin {
         return getClass().getSimpleName();
     }
 
-    @NonNull
-    @Override
-    public List<String> getPluginMethods() {
-        return Arrays.asList("request");
-    }
 
     @NonNull
     @Override
@@ -42,6 +38,7 @@ public class Rating extends GodotPlugin {
         return super.getPluginSignals();
     }
 
+    @UsedByGodot
     public void request() {
         emitSignal("finished", "CMM");
     }
