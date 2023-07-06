@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 AAR_OUTPUT_PATH=android/app/build/outputs/aar
 PLUGIN_PATH=example/android/plugins
