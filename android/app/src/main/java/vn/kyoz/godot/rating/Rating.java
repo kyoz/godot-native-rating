@@ -35,7 +35,7 @@ public class Rating extends GodotPlugin {
 
         signals.add(new SignalInfo("finished", String.class));
 
-        return super.getPluginSignals();
+        return signals;
     }
 
     @UsedByGodot
