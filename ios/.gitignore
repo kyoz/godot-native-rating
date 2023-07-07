@@ -1,0 +1,5 @@
+.DS_Store
+extracted_headers
+godot
+bin
+plugin/admob/lib

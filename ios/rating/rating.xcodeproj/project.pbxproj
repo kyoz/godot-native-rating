@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD998A322A572F7800B4B6A6 /* Godot_Rating.m in Sources */ = {isa = PBXBuildFile; fileRef = BD998A312A572F7800B4B6A6 /* Godot_Rating.m */; };
-		BD998A332A572F7800B4B6A6 /* Godot_Rating.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BD998A302A572F7800B4B6A6 /* Godot_Rating.h */; };
+		BD8AECFD2A5744C000222717 /* rating.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8AECFC2A5744C000222717 /* rating.m */; };
+		BD8AECFE2A5744C000222717 /* rating.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BD8AECFB2A5744C000222717 /* rating.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		BD998A2B2A572F7800B4B6A6 /* CopyFiles */ = {
+		BD8AECF62A5744C000222717 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				BD998A332A572F7800B4B6A6 /* Godot_Rating.h in CopyFiles */,
+				BD8AECFE2A5744C000222717 /* rating.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BD998A2D2A572F7800B4B6A6 /* libGodot Rating.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libGodot Rating.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD998A302A572F7800B4B6A6 /* Godot_Rating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Godot_Rating.h; sourceTree = "<group>"; };
-		BD998A312A572F7800B4B6A6 /* Godot_Rating.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Godot_Rating.m; sourceTree = "<group>"; };
+		BD8AECF82A5744C000222717 /* librating.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = librating.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD8AECFB2A5744C000222717 /* rating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rating.h; sourceTree = "<group>"; };
+		BD8AECFC2A5744C000222717 /* rating.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rating.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BD998A2A2A572F7800B4B6A6 /* Frameworks */ = {
+		BD8AECF52A5744C000222717 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,66 +41,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BD998A242A572F7800B4B6A6 = {
+		BD8AECEF2A5744C000222717 = {
 			isa = PBXGroup;
 			children = (
-				BD998A2F2A572F7800B4B6A6 /* Godot Rating */,
-				BD998A2E2A572F7800B4B6A6 /* Products */,
+				BD8AECFA2A5744C000222717 /* rating */,
+				BD8AECF92A5744C000222717 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		BD998A2E2A572F7800B4B6A6 /* Products */ = {
+		BD8AECF92A5744C000222717 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BD998A2D2A572F7800B4B6A6 /* libGodot Rating.a */,
+				BD8AECF82A5744C000222717 /* librating.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BD998A2F2A572F7800B4B6A6 /* Godot Rating */ = {
+		BD8AECFA2A5744C000222717 /* rating */ = {
 			isa = PBXGroup;
 			children = (
-				BD998A302A572F7800B4B6A6 /* Godot_Rating.h */,
-				BD998A312A572F7800B4B6A6 /* Godot_Rating.m */,
+				BD8AECFB2A5744C000222717 /* rating.h */,
+				BD8AECFC2A5744C000222717 /* rating.m */,
 			);
-			path = "Godot Rating";
+			path = rating;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BD998A2C2A572F7800B4B6A6 /* Godot Rating */ = {
+		BD8AECF72A5744C000222717 /* rating */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BD998A362A572F7800B4B6A6 /* Build configuration list for PBXNativeTarget "Godot Rating" */;
+			buildConfigurationList = BD8AED012A5744C000222717 /* Build configuration list for PBXNativeTarget "rating" */;
 			buildPhases = (
-				BD998A292A572F7800B4B6A6 /* Sources */,
-				BD998A2A2A572F7800B4B6A6 /* Frameworks */,
-				BD998A2B2A572F7800B4B6A6 /* CopyFiles */,
+				BD8AECF42A5744C000222717 /* Sources */,
+				BD8AECF52A5744C000222717 /* Frameworks */,
+				BD8AECF62A5744C000222717 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Godot Rating";
-			productName = "Godot Rating";
-			productReference = BD998A2D2A572F7800B4B6A6 /* libGodot Rating.a */;
+			name = rating;
+			productName = rating;
+			productReference = BD8AECF82A5744C000222717 /* librating.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BD998A252A572F7800B4B6A6 /* Project object */ = {
+		BD8AECF02A5744C000222717 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					BD998A2C2A572F7800B4B6A6 = {
+					BD8AECF72A5744C000222717 = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
-			buildConfigurationList = BD998A282A572F7800B4B6A6 /* Build configuration list for PBXProject "Godot Rating" */;
+			buildConfigurationList = BD8AECF32A5744C000222717 /* Build configuration list for PBXProject "rating" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -108,29 +108,29 @@
 				en,
 				Base,
 			);
-			mainGroup = BD998A242A572F7800B4B6A6;
-			productRefGroup = BD998A2E2A572F7800B4B6A6 /* Products */;
+			mainGroup = BD8AECEF2A5744C000222717;
+			productRefGroup = BD8AECF92A5744C000222717 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BD998A2C2A572F7800B4B6A6 /* Godot Rating */,
+				BD8AECF72A5744C000222717 /* rating */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BD998A292A572F7800B4B6A6 /* Sources */ = {
+		BD8AECF42A5744C000222717 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD998A322A572F7800B4B6A6 /* Godot_Rating.m in Sources */,
+				BD8AECFD2A5744C000222717 /* rating.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		BD998A342A572F7800B4B6A6 /* Debug */ = {
+		BD8AECFF2A5744C000222717 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -188,7 +188,7 @@
 			};
 			name = Debug;
 		};
-		BD998A352A572F7800B4B6A6 /* Release */ = {
+		BD8AED002A5744C000222717 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -240,12 +240,11 @@
 			};
 			name = Release;
 		};
-		BD998A372A572F7800B4B6A6 /* Debug */ = {
+		BD8AED022A5744C000222717 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X8AT4MS8ZQ;
-				HEADER_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -253,12 +252,11 @@
 			};
 			name = Debug;
 		};
-		BD998A382A572F7800B4B6A6 /* Release */ = {
+		BD8AED032A5744C000222717 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X8AT4MS8ZQ;
-				HEADER_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -269,25 +267,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BD998A282A572F7800B4B6A6 /* Build configuration list for PBXProject "Godot Rating" */ = {
+		BD8AECF32A5744C000222717 /* Build configuration list for PBXProject "rating" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BD998A342A572F7800B4B6A6 /* Debug */,
-				BD998A352A572F7800B4B6A6 /* Release */,
+				BD8AECFF2A5744C000222717 /* Debug */,
+				BD8AED002A5744C000222717 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BD998A362A572F7800B4B6A6 /* Build configuration list for PBXNativeTarget "Godot Rating" */ = {
+		BD8AED012A5744C000222717 /* Build configuration list for PBXNativeTarget "rating" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BD998A372A572F7800B4B6A6 /* Debug */,
-				BD998A382A572F7800B4B6A6 /* Release */,
+				BD8AED022A5744C000222717 /* Debug */,
+				BD8AED032A5744C000222717 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = BD998A252A572F7800B4B6A6 /* Project object */;
+	rootObject = BD8AECF02A5744C000222717 /* Project object */;
 }
