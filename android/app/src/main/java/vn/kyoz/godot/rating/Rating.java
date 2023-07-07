@@ -39,8 +39,8 @@ public class Rating extends GodotPlugin {
     public Set<SignalInfo> getPluginSignals() {
         Set<SignalInfo> signals = new ArraySet<>();
 
-        signals.add(new SignalInfo(Signals.ERROR, String. class));
-        signals.add(new SignalInfo(Signals.COMPLETED));
+        signals.add(new SignalInfo("error", String. class));
+        signals.add(new SignalInfo("completed"));
 
         return signals;
     }
@@ -51,8 +51,8 @@ public class Rating extends GodotPlugin {
         int status = googleApiAvailability.isGooglePlayServicesAvailable(getActivity());
 
         if (status != ConnectionResult.SUCCESS) {
-            emitSignal(Signals.ERROR, Errors.ERROR_GOOGLE_PLAY_UNAVAILABLE);
-            Log.e(TAG, Errors.ERROR_GOOGLE_PLAY_UNAVAILABLE);
+            emitSignal("error", "ERROR_GOOGLE_PLAY_UNAVAILABLE");
+            Log.e(TAG, "ERROR_GOOGLE_PLAY_UNAVAILABLE");
             return;
         }
 
@@ -68,11 +68,11 @@ public class Rating extends GodotPlugin {
                     // The flow has finished. The API does not indicate whether the user
                     // reviewed or not, or even whether the review dialog was shown. Thus, no
                     // matter the result, we continue our app flow.
-                    emitSignal(Signals.COMPLETED);
+                    emitSignal("completed");
                 });
 
             } else {
-                emitSignal(Errors.ERROR_UNKNOWN);
+                emitSignal("ERROR_UNKNOWN");
             }
         });
     }
