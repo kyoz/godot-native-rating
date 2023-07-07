@@ -3,3 +3,6 @@
 
 .import/
 android
+
+# iOS exported project
+exported/

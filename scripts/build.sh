@@ -1,7 +1,7 @@
 #!/bin/bash
 
 AAR_OUTPUT_PATH=android/app/build/outputs/aar
-PLUGIN_PATH=example/android/plugins
+EXAMPLE_PLUGIN_PATH=example/android/plugins
 
 # Android
 
@@ -13,9 +13,9 @@ cd android
 ./gradlew assembleRelease
 cd ..
 
-if [ -d $PLUGIN_PATH ]
+if [ -d $EXAMPLE_PLUGIN_PATH ]
 then
     echo ">> Copy plugin to example"
-    cp $AAR_OUTPUT_PATH/app-release.aar $PLUGIN_PATH/rating-release.aar
-    cp android/Rating.gdap $PLUGIN_PATH/
+    cp $AAR_OUTPUT_PATH/app-release.aar $EXAMPLE_PLUGIN_PATH/rating-release.aar
+    cp android/Rating.gdap $EXAMPLE_PLUGIN_PATH/
 fi
