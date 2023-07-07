@@ -22,5 +22,6 @@ cp ./ios/plugin/${PLUGIN}.gdip ./ios/bin/release/${PLUGIN}
 if [ -d $EXAMPLE_PLUGIN_PATH ]
 then
     echo ">> Copy plugin to example"
-    cp ./ios/bin/release/* ${EXAMPLE_PLUGIN_PATH}/${PLUGIN}
+    rm -rf ${EXAMPLE_PLUGIN_PATH}/${PLUGIN}
+    cp -r ./ios/bin/release/${PLUGIN} ${EXAMPLE_PLUGIN_PATH}/${PLUGIN}
 fi

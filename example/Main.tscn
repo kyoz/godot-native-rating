@@ -17,11 +17,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Button" type="Button" parent="CanvasLayer/CenterContainer"]
-margin_left = 266.0
+margin_left = 282.0
 margin_top = 621.0
-margin_right = 453.0
+margin_right = 438.0
 margin_bottom = 659.0
 custom_fonts/font = SubResource( 1 )
-text = "Request Rating"
+text = "Show Rating"
 
 [connection signal="pressed" from="CanvasLayer/CenterContainer/Button" to="." method="_on_Button_pressed"]

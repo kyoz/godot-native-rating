@@ -1,6 +1,6 @@
 [config]
 name="Rating"
-binary="rating/bin/rating.a"
+binary="rating.a"
 
 initialization="register_rating_types"
 deinitialization="unregister_rating_types"
