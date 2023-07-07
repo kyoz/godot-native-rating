@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD8AECFD2A5744C000222717 /* rating.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8AECFC2A5744C000222717 /* rating.m */; };
+		BD8AECFD2A5744C000222717 /* rating.mm in Sources */ = {isa = PBXBuildFile; fileRef = BD8AECFC2A5744C000222717 /* rating.mm */; };
 		BD8AECFE2A5744C000222717 /* rating.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BD8AECFB2A5744C000222717 /* rating.h */; };
+		BDA2A07D2A57FB7200D4843B /* rating_module.mm in Sources */ = {isa = PBXBuildFile; fileRef = BDA2A07C2A57FB7200D4843B /* rating_module.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,7 +28,9 @@
 /* Begin PBXFileReference section */
 		BD8AECF82A5744C000222717 /* librating.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = librating.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8AECFB2A5744C000222717 /* rating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rating.h; sourceTree = "<group>"; };
-		BD8AECFC2A5744C000222717 /* rating.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rating.m; sourceTree = "<group>"; };
+		BD8AECFC2A5744C000222717 /* rating.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = rating.mm; sourceTree = "<group>"; };
+		BDA2A07A2A57FB0800D4843B /* rating_module.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rating_module.h; sourceTree = "<group>"; };
+		BDA2A07C2A57FB7200D4843B /* rating_module.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = rating_module.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				BD8AECFB2A5744C000222717 /* rating.h */,
-				BD8AECFC2A5744C000222717 /* rating.m */,
+				BD8AECFC2A5744C000222717 /* rating.mm */,
+				BDA2A07A2A57FB0800D4843B /* rating_module.h */,
+				BDA2A07C2A57FB7200D4843B /* rating_module.mm */,
 			);
 			path = rating;
 			sourceTree = "<group>";
@@ -123,7 +128,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD8AECFD2A5744C000222717 /* rating.m in Sources */,
+				BDA2A07D2A57FB7200D4843B /* rating_module.mm in Sources */,
+				BD8AECFD2A5744C000222717 /* rating.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +251,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X8AT4MS8ZQ;
+				HEADER_SEARCH_PATHS = (
+					"${inherited}",
+					"${SRCROOT}/../godot",
+					"${SRCROOT}/../godot/platform/iphone",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -257,6 +268,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X8AT4MS8ZQ;
+				HEADER_SEARCH_PATHS = (
+					"${inherited}",
+					"${SRCROOT}/../godot",
+					"${SRCROOT}/../godot/platform/iphone",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
