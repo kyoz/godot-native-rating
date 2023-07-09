@@ -9,11 +9,11 @@ BUILD_VERSION=$([ ! -z "$1" ] && echo $1 || echo ${DEFAULT_ANDROID_TEMPLATE})
 AAR_OUTPUT_PATH=android/app/build/outputs/aar
 EXAMPLE_PLUGIN_PATH=example/android/plugins
 
-echo ">> Cleaning..."
-rm -rf $AAR_OUTPUT_PATH/*
-
 echo ">> Install Android template..."
 ./scripts/android/install.sh $BUILD_VERSION
+
+echo ">> Cleaning..."
+rm -rf $AAR_OUTPUT_PATH/*
 
 echo ">> Preparing build template..."
 # Remove other templates

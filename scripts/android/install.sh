@@ -31,10 +31,6 @@ for version in "${INSTALL_VERSIONS[@]}"; do
         echo "- Downloaded android template version ${version} (cached)"
     else
         echo "- Downloading android template version ${version}..."
-        wget "${GODOT_AAR_URL}/${version}/${AAR_FILE}" \
-            -O "${CACHE_DIR}/${AAR_FILE}" \
-            -q --show-progress
+        wget -P "${CACHE_DIR}" "${GODOT_AAR_URL}/${version}/${AAR_FILE}"
     fi
 done
-
-exit 0
