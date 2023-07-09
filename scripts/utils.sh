@@ -11,7 +11,7 @@ get_android_template_file_name() {
 }
 
 get_ios_template_file_name() {
-    echo "godot-$1-stable.tar.xz"
+    echo extracted_headers_godot_$1.zip
 }
 
 get_ios_major_version() {
