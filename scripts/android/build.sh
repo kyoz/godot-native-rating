@@ -31,6 +31,7 @@ cd ..
 if [ -d $EXAMPLE_PLUGIN_PATH ]
 then
     echo ">> Copy plugin to example"
-    cp $AAR_OUTPUT_PATH/app-release.aar $EXAMPLE_PLUGIN_PATH/rating-release.aar
-    cp android/Rating.gdap $EXAMPLE_PLUGIN_PATH/
+
+    cp $AAR_OUTPUT_PATH/app-release.aar $EXAMPLE_PLUGIN_PATH/${PLUGIN_NAME}-release.aar
+    cp android/${GDAP_FILE} $EXAMPLE_PLUGIN_PATH/
 fi

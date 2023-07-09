@@ -18,7 +18,7 @@ fi
 if [[ " ${INSTALL_VERSIONS[*]} " =~ " ${CHOOSED_VERSION} " ]]; then
     INSTALL_VERSIONS=(${CHOOSED_VERSION})
 else
-    echo "Your template version is not supported yet :'("
+    echo "- Your template version is not supported yet :'("
     exit 1
 fi
 
@@ -28,11 +28,13 @@ for version in "${INSTALL_VERSIONS[@]}"; do
 
     # Check if version is cached
     if test -f "${CACHE_DIR}/${AAR_FILE}"; then
-        echo "Downloaded android template version ${version} (cached)"
+        echo "- Downloaded android template version ${version} (cached)"
     else
-        echo "Downloading android template version ${version}..."
+        echo "- Downloading android template version ${version}..."
         wget "${GODOT_AAR_URL}/${version}/${AAR_FILE}" \
             -O "${CACHE_DIR}/${AAR_FILE}" \
             -q --show-progress
     fi
 done
+
+exit 0
