@@ -1,10 +1,11 @@
 #!/bin/bash
 
 source ./build.env
+source ./scripts/utils.sh
 
-CACHE_DIR=".cache/android-templates"
+CACHE_DIR=${ANDROID_CACHE_DIR}
 INSTALL_VERSIONS=(${ANDROID_TEMPLATES[@]})
-CHOOSED_VERSION=$1
+CHOOSED_VERSION=$([ ! -z "$1" ] && echo $1 || echo ${DEFAULT_ANDROID_TEMPLATE})
 
 GODOT_AAR_URL="https://downloads.tuxfamily.org/godotengine/"
 
@@ -13,26 +14,25 @@ if [ ! -d "${CACHE_DIR}" ]; then
     mkdir -p "${CACHE_DIR}"
 fi
 
-# If there is a version provided, check if it is support or not
-if [ ! -z "$CHOOSED_VERSION" ]; then
-    # If is has support, set it as the template to install
-    if [[ " ${INSTALL_VERSIONS[*]} " =~ " ${CHOOSED_VERSION} " ]]; then
-        INSTALL_VERSIONS=(${CHOOSED_VERSION})
-    else
-        echo "Your template version is not supported yet :'("
-        exit
-    fi
+# Check if template version is support or not
+if [[ " ${INSTALL_VERSIONS[*]} " =~ " ${CHOOSED_VERSION} " ]]; then
+    INSTALL_VERSIONS=(${CHOOSED_VERSION})
+else
+    echo "Your template version is not supported yet :'("
+    exit 1
 fi
 
 # Install template, will bypass cached templates
 for version in "${INSTALL_VERSIONS[@]}"; do
+    AAR_FILE=$(get_android_template_file_name $version)
+
     # Check if version is cached
-    if test -f "${CACHE_DIR}/${version}.zip"; then
+    if test -f "${CACHE_DIR}/${AAR_FILE}"; then
         echo "Downloaded android template version ${version} (cached)"
     else
         echo "Downloading android template version ${version}..."
-        wget "${GODOT_AAR_URL}/${version}/godot-lib.${version}.stable.release.aar" \
-            -O "${CACHE_DIR}/${version}.zip" \
+        wget "${GODOT_AAR_URL}/${version}/${AAR_FILE}" \
+            -O "${CACHE_DIR}/${AAR_FILE}" \
             -q --show-progress
     fi
 done
