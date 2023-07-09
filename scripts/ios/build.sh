@@ -7,6 +7,7 @@ source ./scripts/utils.sh
 PLUGIN=${PLUGIN_NAME}
 CACHE_DIR=${IOS_CACHE_DIR}
 BUILD_VERSION=$([ ! -z "$1" ] && echo $1 || echo ${DEFAULT_IOS_TEMPLATE})
+BUILDED_FOLDER=ios/bin/release
 EXAMPLE_PLUGIN_PATH="example/ios/plugins"
 
 echo ">> Install iOS template..."
@@ -31,19 +32,19 @@ MAJOR_VERSION=$(get_ios_major_version $BUILD_VERSION)
 mv ./ios/bin/${PLUGIN}.release_debug.a ./ios/bin/${PLUGIN}.debug.a
 
 # Move to release folder
-rm -rf ./ios/bin/release
-mkdir ./ios/bin/release
-rm -rf ./ios/bin/release/${PLUGIN}
-mkdir -p ./ios/bin/release/${PLUGIN}
+rm -rf $BUILDED_FOLDER 
+mkdir $BUILDED_FOLDER
+rm -rf $BUILDED_FOLDER/${PLUGIN}
+mkdir -p $BUILDED_FOLDER/${PLUGIN}
 
 # Move Plugin
-mv ./ios/bin/${PLUGIN}.{release,debug}.a ./ios/bin/release/${PLUGIN}
-cp ./ios/plugin/${PLUGIN}.gdip ./ios/bin/release/${PLUGIN}
+mv ./ios/bin/${PLUGIN}.{release,debug}.a $BUILDED_FOLDER/${PLUGIN}
+cp ./ios/plugin/${PLUGIN}.gdip $BUILDED_FOLDER/${PLUGIN}
 
 # Copy to example if possible (for faster development)
 if [ -d $EXAMPLE_PLUGIN_PATH ]
 then
     echo ">> Copy plugin to example"
     rm -rf ${EXAMPLE_PLUGIN_PATH}/${PLUGIN}
-    cp -r ./ios/bin/release/${PLUGIN} ${EXAMPLE_PLUGIN_PATH}/${PLUGIN}
+    cp -r $BUILDED_FOLDER/${PLUGIN} ${EXAMPLE_PLUGIN_PATH}/${PLUGIN}
 fi
