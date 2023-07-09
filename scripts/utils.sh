@@ -20,6 +20,6 @@ get_ios_major_version() {
     if [[ $VERSION =~ ^3\..* ]]; then
         echo $VERSION | sed -E 's/^([0-9]+)\..*$/\1.x/g'
     else
-        echo ${VERSION:0:3}
+        echo "4.0"
     fi
 }
