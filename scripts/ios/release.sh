@@ -10,8 +10,7 @@ BUILD_VERSIONS=($([ ! -z "$1" ] && echo $1 || echo ${IOS_TEMPLATES[@]}))
 BUILDED_FOLDER=ios/bin/release
 RELEASE_FOLDER=.release/ios
 
-echo ">> Cleaning release folder..."
-rm -rf $RELEASE_FOLDER/*
+echo ">> Init release folder..."
 mkdir -p $RELEASE_FOLDER
 
 # Build template for all versions (or provided version)

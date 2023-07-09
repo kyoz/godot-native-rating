@@ -9,8 +9,7 @@ BUILD_VERSIONS=($([ ! -z "$1" ] && echo $1 || echo ${ANDROID_TEMPLATES[@]}))
 AAR_OUTPUT_PATH=android/app/build/outputs/aar
 RELEASE_FOLDER=.release/android
 
-echo ">> Cleaning release folder..."
-rm -rf $RELEASE_FOLDER/*
+echo ">> Init release folder..."
 mkdir -p $RELEASE_FOLDER
 
 # Build template for all versions (or provided version)
