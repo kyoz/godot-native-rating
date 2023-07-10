@@ -1,0 +1,38 @@
+name: Release Plugin
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    name: Building the plugin
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache Gradle packages
+        uses: actions/cache@v3
+        with:
+          path: .cache
+          restore-keys: cache
+          run: ls -l
+
+      - name: Compile android plugins
+        run: |
+          ./scripts/android/release.sh
+          ls -l .release/android
+
+      - name: Compile ios plugins
+        run: |
+          ./scripts/ios/release.sh
+          ls -l .release/ios
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: plugins
+          path: .release/*/*.zip
+          retention-days: 4
+          if-no-files-found: error

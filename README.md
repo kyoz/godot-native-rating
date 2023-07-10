@@ -16,10 +16,10 @@
     <img src="https://github.com/kyoz/godot-native-rating/workflows/release/badge.svg">
   </a>
   <a href="https://github.com/kyoz/godot-native-rating/releases">
-    <img src="https://img.shields.io/github/downloads/kyoz/godot-native-rating/total?style=social">
+    <img src="https://img.shields.io/github/downloads/kyoz/godot-native-rating/total">
   </a>
-  <img src="https://img.shields.io/github/stars/kyoz/godot-native-rating?style=social">
-  <img src="https://img.shields.io/github/license/kyoz/godot-native-rating?style=plastic">
+  <img src="https://img.shields.io/github/stars/kyoz/godot-native-rating">
+  <img src="https://img.shields.io/github/license/kyoz/godot-native-rating">
 </p>
 
 <p align="center">
