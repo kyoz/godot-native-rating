@@ -18,7 +18,12 @@ jobs:
         with:
           path: .cache
           restore-keys: cache
-          run: ls -l
+
+      - name: Verify
+        run: |
+          ls -l .cache/
+          ls -l .cache/android
+          ls -l .cache/ios
 
       - name: Compile android plugins
         run: |
