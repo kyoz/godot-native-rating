@@ -14,7 +14,7 @@
   </a>
   <span>&nbsp</span>
   <a href="https://github.com/kyoz/godot-native-rating/actions">
-    <img src="https://img.shields.io/github/actions/workflow/status/kyoz/godot-native-rating/release.yml?label=Build&style=flat-square">
+    <img src="https://img.shields.io/github/actions/workflow/status/kyoz/godot-native-rating/release.yml?label=Build&style=flat-square&color=00ad06">
   </a>
   <span>&nbsp</span>
   <a href="https://github.com/kyoz/godot-native-rating/releases">
