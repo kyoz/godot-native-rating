@@ -1,10 +1,9 @@
 package vn.kyoz.godot.rating;
 
-import android.os.Build;
-import android.util.ArraySet;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.collection.ArraySet;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
