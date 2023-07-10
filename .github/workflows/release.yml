@@ -17,9 +17,10 @@ jobs:
         uses: actions/cache@v3
         with:
           path: .cache
+          key: cache
           restore-keys: cache
 
-      - name: Verify
+      - name: Verify cache files
         run: |
           ls -l .cache/
           ls -l .cache/android
