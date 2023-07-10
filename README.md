@@ -36,6 +36,10 @@
   <a href="https://github.com/kyoz/godot-native-rating/releases">Downloads</a> 
 </p>
 
+<p align="center">
+  <img src="./demo.jpg" style="max-width: 580px; border-radius: 24px">
+</p>
+
 # About
 
 This plugin help request native rating for mobile app (Android/iOS).
