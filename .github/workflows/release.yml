@@ -22,9 +22,9 @@ jobs:
 
       - name: Verify cache files
         run: |
-          ls -l .cache/
-          ls -l .cache/android
-          ls -l .cache/ios
+          ls -l .cache/ >& /dev/null
+          ls -l .cache/android >& /dev/null
+          ls -l .cache/ios >& /dev/null
 
       - name: Compile android plugins
         run: |
