@@ -20,12 +20,6 @@ jobs:
           key: cache
           restore-keys: cache
 
-      - name: Verify cache files
-        run: |
-          ls -l .cache/ >& /dev/null
-          ls -l .cache/android >& /dev/null
-          ls -l .cache/ios >& /dev/null
-
       - name: Compile android plugins
         run: |
           ./scripts/android/release.sh
