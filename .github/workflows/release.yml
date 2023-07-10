@@ -20,13 +20,6 @@ jobs:
           java-version: '17'
           cache: 'gradle'
       
-      - name: Cache Gradle packages
-        uses: actions/cache@v3
-        with:
-          path: .cache/android-templates
-          key: cache-android
-          restore-keys: cache-android
-
       - name: Compile android plugins
         run: |
           ./scripts/android/release.sh
@@ -58,13 +51,6 @@ jobs:
           python -m pip install scons
           python --version
           scons --version
-
-      - name: Cache Gradle packages
-        uses: actions/cache@v3
-        with:
-          path: .cache/ios-templates
-          key: cache-ios
-          restore-keys: cache-ios
 
       - name: Compile ios plugins
         run: |
