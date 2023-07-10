@@ -6,8 +6,8 @@ on:
       - '*'
 
 jobs:
-  build:
-    name: Building the plugin
+  build-android:
+    name: Building for Android
     runs-on: "ubuntu-latest"
 
     steps:
@@ -20,6 +20,32 @@ jobs:
           java-version: '17'
           cache: 'gradle'
       
+      - name: Cache Gradle packages
+        uses: actions/cache@v3
+        with:
+          path: .cache/android
+          key: cache-android
+          restore-keys: cache-android
+
+      - name: Compile android plugins
+        run: |
+          ./scripts/android/release.sh
+          ls -l .release/android
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: plugins
+          path: .release/android/*.zip
+          retention-days: 4
+          if-no-files-found: error
+
+  build-ios:
+    name: Building for iOS
+    runs-on: "macos-latest"
+
+    steps:
+      - uses: actions/checkout@v3
+    
       - name: Set up Python 3.x
         uses: actions/setup-python@v2
         with:
@@ -36,14 +62,9 @@ jobs:
       - name: Cache Gradle packages
         uses: actions/cache@v3
         with:
-          path: .cache
-          key: cache
-          restore-keys: cache
-
-      - name: Compile android plugins
-        run: |
-          ./scripts/android/release.sh
-          ls -l .release/android
+          path: .cache/ios
+          key: cache-ios
+          restore-keys: cache-ios
 
       - name: Compile ios plugins
         run: |
@@ -53,6 +74,6 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: plugins
-          path: .release/*/*.zip
+          path: .release/ios/*.zip
           retention-days: 4
           if-no-files-found: error
