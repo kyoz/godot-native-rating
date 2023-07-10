@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://b33trepis75om"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_3spho"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_3spho")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="CenterContainer"]
+layout_mode = 2
+text = "Show Rating"
+
+[connection signal="pressed" from="CenterContainer/Button" to="." method="_on_button_pressed"]
