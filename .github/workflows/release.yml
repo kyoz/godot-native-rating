@@ -23,7 +23,7 @@ jobs:
       - name: Cache Gradle packages
         uses: actions/cache@v3
         with:
-          path: .cache/android
+          path: .cache/android-templates
           key: cache-android
           restore-keys: cache-android
 
@@ -62,7 +62,7 @@ jobs:
       - name: Cache Gradle packages
         uses: actions/cache@v3
         with:
-          path: .cache/ios
+          path: .cache/ios-templates
           key: cache-ios
           restore-keys: cache-ios
 
