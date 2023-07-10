@@ -10,16 +10,20 @@
 
 <p align="center">
   <a href="https://github.com/kyoz/godot-native-rating/releases">
-    <img src="https://img.shields.io/github/v/tag/kyoz/godot-native-rating?label=Version">
+    <img src="https://img.shields.io/github/v/tag/kyoz/godot-native-rating?label=Version&style=flat-square">
   </a>
+  <span>&nbsp</span>
   <a href="https://github.com/kyoz/godot-native-rating/actions">
-    <img src="https://github.com/kyoz/godot-native-rating/workflows/release/badge.svg">
+    <img src="https://img.shields.io/github/actions/workflow/status/kyoz/godot-native-rating/release.yml?label=Build&style=flat-square">
   </a>
+  <span>&nbsp</span>
   <a href="https://github.com/kyoz/godot-native-rating/releases">
-    <img src="https://img.shields.io/github/downloads/kyoz/godot-native-rating/total">
+    <img src="https://img.shields.io/github/downloads/kyoz/godot-native-rating/total?label=Downloads&style=flat-square">
   </a>
-  <img src="https://img.shields.io/github/stars/kyoz/godot-native-rating">
-  <img src="https://img.shields.io/github/license/kyoz/godot-native-rating">
+  <span>&nbsp</span>
+  <img src="https://img.shields.io/github/stars/kyoz/godot-native-rating?style=flat-square&color=c99e00">
+  <span>&nbsp</span>
+  <img src="https://img.shields.io/github/license/kyoz/godot-native-rating?style=flat-square&color=fc7b03">
 </p>
 
 <p align="center">
