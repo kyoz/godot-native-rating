@@ -31,7 +31,7 @@ for version in "${BUILD_VERSIONS[@]}"; do
     unzip ${CACHE_DIR}/${HEADER_FILE} -d ./ios/
 
     echo ">> Building..."
-    MAJOR_VERSION=$(get_ios_major_version $version)
+    MAJOR_VERSION=$(get_major_version $version)
 
     # Compile Plugin
     ./scripts/ios/generate_static_library.sh $PLUGIN release $MAJOR_VERSION

@@ -7,7 +7,6 @@ source ./scripts/utils.sh
 CACHE_DIR=${ANDROID_CACHE_DIR}
 BUILD_VERSION=$([ ! -z "$1" ] && echo $1 || echo ${DEFAULT_ANDROID_TEMPLATE})
 AAR_OUTPUT_PATH=android/app/build/outputs/aar
-EXAMPLE_PLUGIN_PATH=example/android/plugins
 
 echo ">> Install Android template..."
 ./scripts/android/install.sh $BUILD_VERSION
@@ -28,10 +27,12 @@ cd android
 cd ..
 
 # Copy to example if possible (for faster development)
-if [ -d $EXAMPLE_PLUGIN_PATH ]
+EXAMPLE_PATH=$(get_example_path $BUILD_VERSION)/android/plugins
+
+if [ -d $EXAMPLE_PATH ]
 then
     echo ">> Copy plugin to example"
 
-    cp $AAR_OUTPUT_PATH/app-release.aar $EXAMPLE_PLUGIN_PATH/${PLUGIN_NAME}-release.aar
-    cp android/${GDAP_FILE} $EXAMPLE_PLUGIN_PATH/
+    cp $AAR_OUTPUT_PATH/app-release.aar $EXAMPLE_PATH/${PLUGIN_NAME}-release.aar
+    cp android/${GDAP_FILE} $EXAMPLE_PATH/
 fi

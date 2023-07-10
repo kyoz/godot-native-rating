@@ -8,7 +8,6 @@ PLUGIN=${PLUGIN_NAME}
 CACHE_DIR=${IOS_CACHE_DIR}
 BUILD_VERSION=$([ ! -z "$1" ] && echo $1 || echo ${DEFAULT_IOS_TEMPLATE})
 BUILDED_FOLDER=ios/bin/release
-EXAMPLE_PLUGIN_PATH="example/ios/plugins"
 
 echo ">> Install iOS template..."
 ./scripts/ios/install.sh $BUILD_VERSION
@@ -24,7 +23,7 @@ HEADER_FILE=$(get_ios_template_file_name $BUILD_VERSION)
 unzip ${CACHE_DIR}/${HEADER_FILE} -d ./ios/
 
 echo ">> Building..."
-MAJOR_VERSION=$(get_ios_major_version $BUILD_VERSION)
+MAJOR_VERSION=$(get_major_version $BUILD_VERSION)
 
 # Compile Plugin
 ./scripts/ios/generate_static_library.sh $PLUGIN release $MAJOR_VERSION
@@ -42,9 +41,11 @@ mv ./ios/bin/${PLUGIN}.{release,debug}.a $BUILDED_FOLDER/${PLUGIN}
 cp ./ios/plugin/${PLUGIN}.gdip $BUILDED_FOLDER/${PLUGIN}
 
 # Copy to example if possible (for faster development)
-if [ -d $EXAMPLE_PLUGIN_PATH ]
+
+EXAMPLE_PATH=$(get_example_path $BUILD_VERSION)/ios/plugins
+if [ -d $EXAMPLE_PATH ]
 then
     echo ">> Copy plugin to example"
-    rm -rf ${EXAMPLE_PLUGIN_PATH}/${PLUGIN}
-    cp -r $BUILDED_FOLDER/${PLUGIN} ${EXAMPLE_PLUGIN_PATH}/${PLUGIN}
+    rm -rf ${EXAMPLE_PATH}/${PLUGIN}
+    cp -r $BUILDED_FOLDER/${PLUGIN} ${EXAMPLE_PATH}/${PLUGIN}
 fi
