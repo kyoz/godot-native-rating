@@ -28,7 +28,7 @@ for version in "${BUILD_VERSIONS[@]}"; do
 
     echo ">> Preparing extracted header template..."
     HEADER_FILE=$(get_ios_template_file_name $version)
-    tar -xf ${CACHE_DIR}/${HEADER_FILE} -C ./ios/
+    unzip ${CACHE_DIR}/${HEADER_FILE} -d ./ios/
 
     echo ">> Building..."
     MAJOR_VERSION=$(get_ios_major_version $version)
