@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		BD8AECFD2A5744C000222717 /* rating.mm in Sources */ = {isa = PBXBuildFile; fileRef = BD8AECFC2A5744C000222717 /* rating.mm */; };
 		BD8AECFE2A5744C000222717 /* rating.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BD8AECFB2A5744C000222717 /* rating.h */; };
-		BDF397C12A5B4A110073C2AD /* rating_module.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDF397BF2A5B4A110073C2AD /* rating_module.cpp */; };
+		BDF397C62A5BE8D50073C2AD /* rating_module.mm in Sources */ = {isa = PBXBuildFile; fileRef = BDF397C52A5BE8D50073C2AD /* rating_module.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,8 +29,8 @@
 		BD8AECF82A5744C000222717 /* librating.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = librating.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8AECFB2A5744C000222717 /* rating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rating.h; sourceTree = "<group>"; };
 		BD8AECFC2A5744C000222717 /* rating.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = rating.mm; sourceTree = "<group>"; };
-		BDF397BF2A5B4A110073C2AD /* rating_module.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rating_module.cpp; sourceTree = "<group>"; };
 		BDF397C22A5B4A5A0073C2AD /* rating_module.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rating_module.h; sourceTree = "<group>"; };
+		BDF397C52A5BE8D50073C2AD /* rating_module.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = rating_module.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 		BD8AECFA2A5744C000222717 /* rating */ = {
 			isa = PBXGroup;
 			children = (
-				BDF397BF2A5B4A110073C2AD /* rating_module.cpp */,
+				BDF397C52A5BE8D50073C2AD /* rating_module.mm */,
 				BD8AECFB2A5744C000222717 /* rating.h */,
 				BD8AECFC2A5744C000222717 /* rating.mm */,
 				BDF397C22A5B4A5A0073C2AD /* rating_module.h */,
@@ -129,7 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD8AECFD2A5744C000222717 /* rating.mm in Sources */,
-				BDF397C12A5B4A110073C2AD /* rating_module.cpp in Sources */,
+				BDF397C62A5BE8D50073C2AD /* rating_module.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,11 +8,11 @@
 #ifndef RATING_H
 #define RATING_H
 
-#include "core/version.h"
+#ifdef VERSION_4_0
+#include "core/object/object.h"
+#endif
 
-#if VERSION_MAJOR == 4
-#include "core/object/class_db.h"
-#else
+#ifdef VERSION_3_X
 #include "core/object.h"
 #endif
 

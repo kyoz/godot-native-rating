@@ -5,9 +5,16 @@
 //  Created by Kyoz on 07/07/2023.
 //
 
-#include "rating.h"
+#import <Foundation/Foundation.h>
 #import <StoreKit/StoreKit.h>
 
+#ifdef VERSION_4_0
+#include "core/object/class_db.h"
+#else
+#include "core/class_db.h"
+#endif
+
+#include "rating.h"
 
 Rating *Rating::instance = NULL;
 

@@ -94,6 +94,10 @@ if env['arch'] == 'armv7':
     env.Prepend(CXXFLAGS=['-fno-aligned-allocation'])
 
 if env['version'] == '3.x':
+    env.Append(CCFLAGS=["$IPHONESDK"])
+    env.Prepend(CXXFLAGS=['-DIPHONE_ENABLED'])
+    env.Prepend(CXXFLAGS=['-DVERSION_3_X'])
+
     env.Prepend(CFLAGS=['-std=gnu11'])
     env.Prepend(CXXFLAGS=['-DGLES_ENABLED', '-std=gnu++14'])
 
@@ -122,6 +126,10 @@ if env['version'] == '3.x':
         if env['arch'] != 'armv7':
             env.Prepend(CXXFLAGS=['-fomit-frame-pointer'])
 elif env['version'] == '4.0':
+    env.Append(CCFLAGS=["$IOS_SDK_PATH"])
+    env.Prepend(CXXFLAGS=['-DIOS_ENABLED'])
+    env.Prepend(CXXFLAGS=['-DVERSION_4_0'])
+
     env.Prepend(CFLAGS=['-std=gnu11'])
     env.Prepend(CXXFLAGS=['-DVULKAN_ENABLED', '-std=gnu++17'])
 
