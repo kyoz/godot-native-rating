@@ -6,4 +6,5 @@ android
 
 # iOS exported project
 exported/
-ios/plugins/
+ios/plugins/*
+!ios/plugins/dummy
