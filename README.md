@@ -6,7 +6,7 @@
   <br>
 </h1>
 
-<h4 align="center">Godot plugin to request Native Rating on Android/iOS. Support Godot 3 & 4</a>.</h4>
+<h4 align="center">Godot plugin to request Native Rating on Android/iOS. Supports Godot 3 & 4</a>.</h4>
 
 <p align="center">
   <a href="https://github.com/kyoz/godot-native-rating/releases">
@@ -42,35 +42,35 @@
 
 # About
 
-This plugin help request native rating for mobile app (Android/iOS).
+This plugin helps you request native rating on mobile (Android/iOS).
 
-Was build using automation scripts combine with CI/CD to help faster the release progress and well as release hotfix which save some of our times.
+Built using automation scripts combined with CI/CD to help speed up the release progress as well as the release of hotfixes which save some of our time.
 
-Support Godot 3 & 4.
+Supports Godot 3 & 4.
 
 # Installation
 
 ## Android
 
-Download the [android plugin](https://github.com/kyoz/godot-native-rating/releases) (match your Godot version), extract them to `your_project/android/plugins`
+Download the [Android plugin](https://github.com/kyoz/godot-native-rating/releases) (match your Godot version), and extract them to `your_project/android/plugins`
 
-Enable `Rating` plugin in your android export preset
+Enable `Rating` plugin in your Android export preset.
 
 *Note*: You must [use custom build](https://docs.godotengine.org/en/stable/tutorials/export/android_custom_build.html) for Android to use plugins.
 
 ## iOS
 
-Download the [ios plugin](https://github.com/kyoz/godot-native-rating/releases) (match your Godot version), extract them to `ios/plugins`
+Download the [iOS plugin](https://github.com/kyoz/godot-native-rating/releases) (match your Godot version), and extract them to `ios/plugins`
 
-Enable `Rating` plugin in your ios export preset
+Enable `Rating` plugin in your iOS export preset.
 
 # Usage
 
-You will need to add an `autoload` script to use this plugin more easily.
+An `autoload` script is provided for easier use of this plugin.
 
-Download [autoload file](./autoload) to your game (Choose correct Godot version). Add it to your project `autoload` list.
+Download [autoload file](./autoload) (match your Godot version). Add it to your project `autoload` list.
 
-Then you can easily use it anywhere with:
+Then you can easily use the plugin anywhere with:
 
 ```gdscript
 Rating.init()
@@ -83,7 +83,9 @@ Rating.connect("on_completed", self, "_on_completed")
 Rating.on_completed.connect(_on_completed)
 ```
 
-Why have to call `init()`. Well, if you don't want to call init, you can change `init()` to `_ready()` on the `autoload` file. But for my experience when using a lots of plugin, init all plugins on `_ready()` is not a good idea. So i let you choose whenever you init the plugin. When showing a loading scene...etc...
+"Why do I have to call `init()`?"  
+
+Well, if you don't want to, you can change `init()` to `_ready()` on the `autoload` file. But in my experience, when using a lot of plugins, initializing all plugins on `_ready()` is not a good idea. This way, you can choose whenever to initialize the plugin e.g. when showing a loading scene, etc.
 
 For more detail, see [examples](./example/)
 
@@ -92,51 +94,53 @@ For more detail, see [examples](./example/)
 ## Methods
 
 ```gdscript
-void show() # Request and show rating popup
+void show() # Requests and shows rating Popup
 ```
 
 ## Signals
 
 ```gdscript
-signal on_error(error_code) # request rating fail, return error_code
-signal on_completed() # request and show rating completed
+signal on_error(error_code) # Rating request failed, returning error_code
+signal on_completed() # Rating request displayed and completed
 ```
 
 ## Error Codes
 
 > `ERROR_GOOGLE_PLAY_UNAVAILABLE`
 
-Android only. Happen when there's no Google Play Services on the user phone. Rarely happen. Cause normally, they will install your app through Google Play.
+Android only. Happens when there's no Google Play Services on the user's phone. Rarely happens, because normally they will install your app through Google Play.
 
 > `ERROR_NO_ACTIVE_SCENE`
 
-iOS only. Happen when the plugin can't find active scene. Make sure you calling `show()` method when the app are runing in foreground.
+iOS only. Happens when the plugin can't find an active scene. Make sure you calling `show()` method when the app is runing in foreground.
 
 > `ERROR_UNKNOWN`
 
-Is rarely happen too. On Android, it may happen if the user are in China Mainland, cause they are not allow native rating here. It could also happen if the user install your app from other store but not on Google Play.
+Rarely happens also. For example, on Android, if the user is in China Mainland, they are not allowed native rating. It could also happen if the user installed your app from sources other than Google Play.
 
 # Notes
 
-Testing on iOS is pretty simple, but when testing on Android, you have to publish your app to Google Play Console, at least public it to [Internal Testing](https://play.google.com/console/about/internal-testing/) or else the rating popup will not show.
+Testing on iOS is pretty simple.  
 
-When calling `show()` method. If you get `on_completed` signal. It's mean the request is complete. There is no need to do anything except some storage caching to not showing it again.
+However, when testing on Android, you have to publish your app to Google Play Console, or at least make it public to [Internal Testing](https://play.google.com/console/about/internal-testing/) or else the rating Popup will not show.
 
-*WARNNING*:
+When calling `show()`. If you get `on_completed` signal, it means the request has been completed. There is no further need to do anything except some storage caching to not show it again.
 
-- Do not spaming `show()` method. You better call it after users has completed some levels or after users comeback to your game a few times. And most importantly, after showing, whenever you get `on_completed` or `on_error`. Do not try to show it again, or else your app/game may get reject when Google/Apple review it.
+*WARNING*:
 
-- This plugin is enough for users to rating/review your app. Just call `show()` and done. Do not show Toast or Dialog to tell user rate 5 star for you. They'll reject your game when review.
+- Do NOT spam `show()`. You can call it after the user has completed some levels or after the user has come back to your game a few times. And most importantly, after showing, whenever you get `on_completed` or `on_error`, do NOT try to `show()` again, or else your app/game may get rejected when reviewed by Google/Apple.
+
+- This plugin is sufficient for the rating process. Call `show()` and that's it. Do NOT show a Toast notification or a Dialog to tell the user to rate 5 star. Google/Apple will likely reject your game when reviewing.
 
 # Contribute
 
-I want to help contribute to Godot community so i create these plugins. I'v prepared almost everything to help the development and release progress faster and easier.
+I want to contribute to the Godot community so I create these plugins. I've prepared almost everything to help simplify and speed up the development and release progress.
 
-Only one command and you'll build, release this plugin. Read [DEVELOP.md](./DEVELOP.md) for more information.
+With only one command, you can build and release this plugin. Read [DEVELOP.md](./DEVELOP.md) for more information.
 
-If you found bug of the plugin, please open issues.
+If you find bugs, please open issues.
 
-If you have time to fix bugs or improve the plugins. Please open PR, it's always welcome.
+If you have time to fix bugs or improve the plugins, please open PR. It's always welcomed and appreciated.
 
 # License
 
