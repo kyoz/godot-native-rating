@@ -71,7 +71,7 @@ public class Rating extends GodotPlugin {
                 });
 
             } else {
-                emitSignal("ERROR_UNKNOWN");
+                emitSignal("error", "ERROR_UNKNOWN");
             }
         });
     }
