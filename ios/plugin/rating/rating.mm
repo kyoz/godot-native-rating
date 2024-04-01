@@ -36,8 +36,8 @@ Rating *Rating::get_singleton() {
 
 
 void Rating::_bind_methods() {
-    ADD_SIGNAL(MethodInfo("completed"));
-    ADD_SIGNAL(MethodInfo("error", PropertyInfo(Variant::STRING, "error_code")));
+    ADD_SIGNAL(MethodInfo("rating_completed"));
+    ADD_SIGNAL(MethodInfo("rating_error", PropertyInfo(Variant::STRING, "error_code")));
     
     ClassDB::bind_method("show", &Rating::show);
 }
@@ -55,15 +55,15 @@ void Rating::show() {
         
         if (scene != nil) {
             [SKStoreReviewController requestReviewInScene:scene];
-            emit_signal("completed");
+            emit_signal("rating_completed");
         } else {
-            emit_signal("error", "ERROR_NO_ACTIVE_SCENE");
+            emit_signal("rating_error", "ERROR_NO_ACTIVE_SCENE");
         }
     } else if (@available(iOS 10.3, *)) {
         [SKStoreReviewController requestReview];
-        emit_signal("completed");
+        emit_signal("rating_completed");
     } else {
-        emit_signal("error", "ERROR_UNKNOWN");
+        emit_signal("rating_error", "ERROR_UNKNOWN");
     }
 }
 

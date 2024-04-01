@@ -14,8 +14,8 @@ func init():
 
 
 func init_signals():
-	rating.error.connect(_on_error)
-	rating.completed.connect(_on_completed)
+	rating.rating_error.connect(_on_error)
+	rating.rating_completed.connect(_on_completed)
 
 
 func _on_error(error_code):
