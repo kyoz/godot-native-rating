@@ -50,8 +50,9 @@ for version in "${BUILD_VERSIONS[@]}"; do
 
     # Pack the plugin to zip file
     cd $BUILDED_FOLDER
-    zip -r $PLUGIN.zip rating/
+    zip -r $PLUGIN.zip $PLUGIN/
     cd ../../..
 
     mv $BUILDED_FOLDER/$PLUGIN.zip $RELEASE_FOLDER/ios-template-${version}.zip
 done
+
